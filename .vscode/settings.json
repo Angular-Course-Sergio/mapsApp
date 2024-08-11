@@ -31,7 +31,7 @@
   "workbench.startupEditor": "none",
   "workbench.colorTheme": "Aura Soft Dark",
   "terminal.integrated.env.windows": {},
-  "files.autoSave": "afterDelay",
+  "files.autoSave": "off",
   "[jsonc]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
