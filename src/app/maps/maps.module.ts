@@ -9,7 +9,7 @@ import { FullScreenPageComponent } from './pages/full-screen-page/full-screen-pa
 import { MarkersPageComponent } from './pages/markers-page/markers-page.component';
 import { PropertiesPageComponent } from './pages/properties-page/properties-page.component';
 import { ZoomRangePageComponent } from './pages/zoom-range-page/zoom-range-page.component';
-import { environment } from '../../environments/environments';
+import { CounterAloneComponent } from "../alone/components/counter-alone/counter-alone.component";
 
 
 @NgModule({
@@ -24,7 +24,8 @@ import { environment } from '../../environments/environments';
   ],
   imports: [
     CommonModule,
-    MapsRoutingModule
-  ]
+    MapsRoutingModule,
+    CounterAloneComponent
+]
 })
 export class MapsModule { }
