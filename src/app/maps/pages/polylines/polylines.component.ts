@@ -8,6 +8,7 @@ import {
 import { Map, Popup, Marker } from 'mapbox-gl';
 import { environment } from '../../../../environments/environments';
 import { PlacesService } from '../../services/places.service';
+import { MapService } from '../../services/map.service';
 
 @Component({
   templateUrl: './polylines.component.html',
@@ -18,7 +19,10 @@ export class PolylinesComponent implements AfterViewChecked {
 
   private mapInit: boolean = false;
 
-  constructor(private placesService: PlacesService) {}
+  constructor(
+    private placesService: PlacesService,
+    private mapService: MapService
+  ) {}
 
   get isUserLocationReady() {
     return this.placesService.isUserLocationReady;
@@ -42,6 +46,8 @@ export class PolylinesComponent implements AfterViewChecked {
       zoom: 14,
     });
 
+    this.mapService.setMap(map);
+
     const popup = new Popup().setHTML(`
       <h6>Aquí estoy</h6>
       <span>Estoy en este lugar del mundo</span>
@@ -56,6 +62,6 @@ export class PolylinesComponent implements AfterViewChecked {
   }
 
   goToMyLocation() {
-    console.log('Hola mundo');
+    this.mapService.flyTo(this.placesService.userLocation!);
   }
 }
