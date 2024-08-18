@@ -5,7 +5,7 @@ import {
   ElementRef,
   ViewChild,
 } from '@angular/core';
-import { Map } from 'mapbox-gl';
+import { Map, Popup, Marker } from 'mapbox-gl';
 import { environment } from '../../../../environments/environments';
 import { PlacesService } from '../../services/places.service';
 
@@ -39,7 +39,19 @@ export class PolylinesComponent implements AfterViewChecked {
       container: this.divMap.nativeElement,
       style: 'mapbox://styles/mapbox/streets-v12',
       center: this.placesService.userLocation,
-      zoom: 9,
+      zoom: 14,
     });
+
+    const popup = new Popup().setHTML(`
+      <h6>Aquí estoy</h6>
+      <span>Estoy en este lugar del mundo</span>
+      `);
+
+    new Marker({
+      color: 'red',
+    })
+      .setLngLat(this.placesService.userLocation!)
+      .setPopup(popup)
+      .addTo(map);
   }
 }
