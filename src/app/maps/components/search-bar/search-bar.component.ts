@@ -13,6 +13,7 @@ export class SearchBarComponent {
 
   constructor() {}
 
+
   onQueryChanged(query: string) {
     if (this.debounceTimer) clearTimeout(this.debounceTimer);
 
