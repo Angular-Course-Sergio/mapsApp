@@ -5,15 +5,21 @@
 
 <ul class="list-group mt-2" *ngIf="loadedPlaces.length > 0">
   <li
-    class="list-group-item list-group-item-action pointer"
     *ngFor="let place of loadedPlaces"
+    class="list-group-item list-group-item-action pointer"
+    [class.active]="place.id === selectedId"
     (click)="flyToPlace(place)"
   >
     <h6>{{ place.text_es }}</h6>
     <p>
       {{ place.place_name }}
     </p>
-    <button class="btn btn-sm btn-outline-primary" (click)="flyToPlace(place)">
+    <button
+      class="btn btn-sm"
+      [ngClass]="
+        place.id === selectedId ? 'btn-outline-light' : 'btn-outline-primary'
+      "
+    >
       Direcciones
     </button>
   </li>

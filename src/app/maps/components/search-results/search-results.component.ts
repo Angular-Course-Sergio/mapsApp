@@ -10,6 +10,8 @@ import { Feature } from '../../interfaces/places.interface';
   styleUrl: './search-results.component.css',
 })
 export class SearchResultsComponent {
+  public selectedId: string = '';
+
   private placesService = inject(PlacesService);
   private mapService = inject(MapService);
 
@@ -22,8 +24,8 @@ export class SearchResultsComponent {
   }
 
   flyToPlace(place: Feature) {
+    this.selectedId = place.id;
     const [lng, lat] = place.center;
-
     this.mapService.flyTo([lng, lat]);
   }
 }

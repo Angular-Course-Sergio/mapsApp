@@ -2,12 +2,14 @@ import { inject, Injectable } from '@angular/core';
 import { environment } from '../../../environments/environments';
 import { Feature, PlacesResponse } from '../interfaces/places.interface';
 import { PlacesApiClient } from '../api/placesApiClient';
+import { MapService } from './map.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PlacesService {
   private placesHttp = inject(PlacesApiClient);
+  private mapService = inject(MapService);
 
   public userLocation?: [number, number];
   public isLoadingPlaces: boolean = false;
@@ -39,6 +41,11 @@ export class PlacesService {
   }
 
   getPlacesByQuery(query: string = '') {
+    if (query.length === 0) {
+      this.places = [];
+      this.isLoadingPlaces = false;
+      return;
+    }
     if (!this.userLocation) return;
 
     this.isLoadingPlaces = true;
@@ -52,6 +59,8 @@ export class PlacesService {
       .subscribe((res) => {
         this.isLoadingPlaces = false;
         this.places = res.features;
+
+        this.mapService.createMarkersFromPlaces(this.places);
       });
   }
 }
