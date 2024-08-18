@@ -54,4 +54,8 @@ export class PolylinesComponent implements AfterViewChecked {
       .setPopup(popup)
       .addTo(map);
   }
+
+  goToMyLocation() {
+    console.log('Hola mundo');
+  }
 }

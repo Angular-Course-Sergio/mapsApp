@@ -2,3 +2,13 @@ div {
   width: 100vw;
   height: 100vh;
 }
+
+button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+  width: 150px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
