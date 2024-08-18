@@ -5,6 +5,7 @@ import { FullScreenPageComponent } from './pages/full-screen-page/full-screen-pa
 import { ZoomRangePageComponent } from './pages/zoom-range-page/zoom-range-page.component';
 import { MarkersPageComponent } from './pages/markers-page/markers-page.component';
 import { PropertiesPageComponent } from './pages/properties-page/properties-page.component';
+import { PolylinesComponent } from './pages/polylines/polylines.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,7 @@ const routes: Routes = [
       { path: 'fullscreen', component: FullScreenPageComponent },
       { path: 'zoom-range', component: ZoomRangePageComponent },
       { path: 'markers', component: MarkersPageComponent },
+      { path: 'polylines', component: PolylinesComponent },
       { path: 'properties', component: PropertiesPageComponent },
       { path: '**', redirectTo: 'fullscreen' },
     ],

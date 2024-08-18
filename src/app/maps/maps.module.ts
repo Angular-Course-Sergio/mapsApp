@@ -11,6 +11,8 @@ import { ZoomRangePageComponent } from './pages/zoom-range-page/zoom-range-page.
 
 import { CounterAloneComponent } from "../alone/components/counter-alone/counter-alone.component";
 import { SideMenuComponent } from '../alone/components/side-menu/side-menu.component';
+import { PolylinesComponent } from './pages/polylines/polylines.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { SideMenuComponent } from '../alone/components/side-menu/side-menu.compo
     FullScreenPageComponent,
     MarkersPageComponent,
     PropertiesPageComponent,
-    ZoomRangePageComponent
+    ZoomRangePageComponent,
+    PolylinesComponent,
+    LoadingComponent
   ],
   imports: [
     CommonModule,
