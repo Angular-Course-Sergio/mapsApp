@@ -12,3 +12,15 @@ button {
   border-radius: 10px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 }
+
+app-search-bar {
+  position: fixed;
+  width: 270px;
+  top: 20px;
+  left: 150px;
+  background-color: white;
+  padding: 5px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}

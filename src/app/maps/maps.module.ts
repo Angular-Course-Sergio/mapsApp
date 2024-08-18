@@ -13,6 +13,8 @@ import { CounterAloneComponent } from "../alone/components/counter-alone/counter
 import { SideMenuComponent } from '../alone/components/side-menu/side-menu.component';
 import { PolylinesComponent } from './pages/polylines/polylines.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { SearchResultsComponent } from './components/search-results/search-results.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { LoadingComponent } from './components/loading/loading.component';
     PropertiesPageComponent,
     ZoomRangePageComponent,
     PolylinesComponent,
-    LoadingComponent
+    LoadingComponent,
+    SearchBarComponent,
+    SearchResultsComponent
   ],
   imports: [
     CommonModule,
