@@ -28,4 +28,10 @@ export class SearchResultsComponent {
     const [lng, lat] = place.center;
     this.mapService.flyTo([lng, lat]);
   }
+
+  getDirections(place: Feature) {
+    const start = this.placesService.userLocation!;
+    const end = place.center as [number, number];
+    this.mapService.getRouteWaypoints(start, end);
+  }
 }
