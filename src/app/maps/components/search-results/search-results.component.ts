@@ -30,6 +30,7 @@ export class SearchResultsComponent {
   }
 
   getDirections(place: Feature) {
+    this.placesService.deletePlaces();
     const start = this.placesService.userLocation!;
     const end = place.center as [number, number];
     this.mapService.getRouteWaypoints(start, end);

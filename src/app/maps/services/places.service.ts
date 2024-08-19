@@ -33,7 +33,6 @@ export class PlacesService {
 
         (error) => {
           alert('No se pudo obetener la geolocalización');
-          console.log(error);
           reject();
         }
       );
@@ -60,7 +59,14 @@ export class PlacesService {
         this.isLoadingPlaces = false;
         this.places = res.features;
 
-        this.mapService.createMarkersFromPlaces(this.places, this.userLocation!);
+        this.mapService.createMarkersFromPlaces(
+          this.places,
+          this.userLocation!
+        );
       });
+  }
+
+  deletePlaces() {
+    this.places = [];
   }
 }

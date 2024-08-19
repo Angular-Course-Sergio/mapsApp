@@ -81,7 +81,6 @@ export class MapService {
   }
 
   private drawLineString(route: Route) {
-    console.log({ kms: route.distance / 1000, duration: route.duration / 60 });
     if (!this.map) throw Error('Mapa no inicializado');
 
     const coords = route.geometry.coordinates;

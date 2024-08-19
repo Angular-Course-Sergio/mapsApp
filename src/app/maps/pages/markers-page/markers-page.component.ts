@@ -100,7 +100,5 @@ export class MarkersPageComponent implements AfterViewInit {
       const coords = new LngLat(lng, lat);
       this.addMarker(coords, color);
     });
-
-    console.log(plainMarkers);
   }
 }
